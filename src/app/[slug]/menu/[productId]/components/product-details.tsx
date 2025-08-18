@@ -26,22 +26,26 @@ interface ProductDetailsProps {
 }
 
 const ProductDetails = ({ product }: ProductDetailsProps) => {
-    const { toggleCart } = useContext(CartContext)
-    const [quatity, setQuantity] = useState<number>(1)
-    const handleDecreaseQuantity = () => {
-        setQuantity((prev) => {
-            if (prev = 1) {
-                return 1
-            }
-            return prev - 1
-        })
-    }
-    const handleIncreaseQuantity = () => {
-        setQuantity((prev) => prev + 1)
-    }
-    const handleAddToCart = () => {
-        toggleCart()
-    }
+  const { toggleCart, addProduct } = useContext(CartContext);
+  const [quantity, setQuantity] = useState<number>(1);
+  const handleDecreaseQuantity = () => {
+    setQuantity((prev) => {
+      if (prev === 1) {
+        return 1;
+      }
+      return prev - 1;
+    });
+  };
+  const handleIncreaseQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
+  const handleAddToCart = () => {
+    addProduct({
+      ...product,
+      quantity,
+    });
+    toggleCart();
+  };
     return (
         <>
             <div className="relative z-50 mt-[-1.5rem] rounded-t-3xl p-5 flex-auto flex flex-col overflow-hidden">
