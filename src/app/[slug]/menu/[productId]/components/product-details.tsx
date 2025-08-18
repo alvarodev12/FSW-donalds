@@ -74,7 +74,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
                             <Button variant="outline" className="h-8 w-8 rounded-xl" onClick={handleDecreaseQuantity}>
                                 <ChevronLeftIcon />
                             </Button>
-                            <p className="w-4">{quatity}</p>
+                            <p className="w-4">{quantity}</p>
                             <Button variant="destructive" className="h-8 w-8 rounded-xl" onClick={handleIncreaseQuantity}>
                                 <ChevronRightIcon />
                             </Button>
