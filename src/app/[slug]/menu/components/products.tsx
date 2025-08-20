@@ -21,7 +21,7 @@ const Products = ({ products }: ProductsProps) => {
           href={`/${slug}/menu/${product.id}?consumptionMethod=${consumptionMethod}`}
           className="flex items-center justify-between gap-10 border-b py-3"
         >
-          {/* esquerda*/}
+          {/* ESQUERDA */}
           <div>
             <h3 className="text-sm font-medium">{product.name}</h3>
             <p className="line-clamp-2 text-sm text-muted-foreground">
@@ -32,7 +32,7 @@ const Products = ({ products }: ProductsProps) => {
             </p>
           </div>
 
-          {/* direita*/}
+          {/* DIREITA */}
           <div className="relative min-h-[82px] min-w-[120px]">
             <Image
               src={product.imageUrl}
