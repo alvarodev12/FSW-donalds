@@ -26,26 +26,26 @@ interface ProductDetailsProps {
 }
 
 const ProductDetails = ({ product }: ProductDetailsProps) => {
-  const { toggleCart, addProduct } = useContext(CartContext);
-  const [quantity, setQuantity] = useState<number>(1);
-  const handleDecreaseQuantity = () => {
-    setQuantity((prev) => {
-      if (prev === 1) {
-        return 1;
-      }
-      return prev - 1;
-    });
-  };
-  const handleIncreaseQuantity = () => {
-    setQuantity((prev) => prev + 1);
-  };
-  const handleAddToCart = () => {
-    addProduct({
-      ...product,
-      quantity,
-    });
-    toggleCart();
-  };
+    const { toggleCart, addProduct } = useContext(CartContext);
+    const [quantity, setQuantity] = useState<number>(1);
+    const handleDecreaseQuantity = () => {
+        setQuantity((prev) => {
+            if (prev === 1) {
+                return 1;
+            }
+            return prev - 1;
+        });
+    };
+    const handleIncreaseQuantity = () => {
+        setQuantity((prev) => prev + 1);
+    };
+    const handleAddToCart = () => {
+        addProduct({
+            ...product,
+            quantity,
+        });
+        toggleCart();
+    };
     return (
         <>
             <div className="relative z-50 mt-[-1.5rem] rounded-t-3xl p-5 flex-auto flex flex-col overflow-hidden">
@@ -68,7 +68,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
                     {/* preço e quantidade */}
                     <div className="flex items-center justify-between mt-3">
                         <h3 className="text-xl font-semibold">
-                            {formatCurrency(product.price)}
+                            {formatCurrency(Number(product.price))}
                         </h3>
                         <div className="flex items-center gap-3 text-center">
                             <Button variant="outline" className="h-8 w-8 rounded-xl" onClick={handleDecreaseQuantity}>
